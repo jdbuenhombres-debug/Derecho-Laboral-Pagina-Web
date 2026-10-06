@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jurisdicción Laboral y Reclamación Administrativa</title>
+<style>
+:root{
+  --azul:#17365d; --azul2:#245a91; --celeste:#eaf3fb; --dorado:#d6a84f;
+  --verde:#2e7d5b; --rojo:#b94a48; --gris:#f5f7fa; --texto:#243447;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--texto);background:#f3f5f8;line-height:1.65}
+header{
+  background:linear-gradient(135deg,#102a43,#245a91);
+  color:white;padding:55px 7%;text-align:center;
+}
+header .badge{display:inline-block;border:1px solid rgba(255,255,255,.4);padding:7px 16px;border-radius:30px;font-size:.9rem}
+header h1{font-size:clamp(2rem,5vw,3.7rem);margin:18px 0 10px}
+header p{max-width:900px;margin:auto;font-size:1.15rem;opacity:.95}
+.author{display:inline-block;margin:8px 0 18px;padding:8px 16px;border-radius:20px;
+background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);
+font-size:1rem;letter-spacing:.2px}
+nav{position:sticky;top:0;z-index:20;background:white;box-shadow:0 2px 12px #0002;display:flex;justify-content:center;flex-wrap:wrap}
+nav a{padding:14px 16px;text-decoration:none;color:var(--azul);font-weight:bold;font-size:.9rem}
+nav a:hover{background:var(--celeste)}
+main{max-width:1180px;margin:auto;padding:30px 18px 70px}
+section{background:white;margin:28px 0;padding:35px;border-radius:18px;box-shadow:0 5px 22px #17365d12}
+h2{color:var(--azul);font-size:2rem;margin-top:0;border-left:6px solid var(--dorado);padding-left:14px}
+h3{color:var(--azul2)}
+.intro{font-size:1.08rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:var(--gris);padding:22px;border-radius:14px;border-top:4px solid var(--azul2)}
+.card strong{color:var(--azul)}
+.step{display:flex;gap:18px;align-items:flex-start;margin:18px 0;padding:20px;background:#f8fafc;border-radius:14px}
+.num{min-width:44px;height:44px;border-radius:50%;background:var(--azul);color:white;display:grid;place-items:center;font-weight:bold}
+.alert{padding:20px;border-radius:14px;background:#fff8e8;border-left:6px solid var(--dorado)}
+.success{background:#edf8f2;border-left:6px solid var(--verde)}
+.danger{background:#fff0f0;border-left:6px solid var(--rojo)}
+.case{background:linear-gradient(135deg,#edf5fc,#fff);border:1px solid #cbdceb}
+table{width:100%;border-collapse:collapse;margin-top:18px}
+th,td{padding:15px;border:1px solid #dce3ea;text-align:left;vertical-align:top}
+th{background:var(--azul);color:white}
+tr:nth-child(even){background:#f8fafc}
+.flow{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin:25px 0}
+.flow .box{padding:17px 20px;border-radius:12px;background:var(--celeste);border:2px solid #9fc2df;text-align:center;font-weight:bold;min-width:170px}
+.arrow{font-size:1.7rem;color:var(--azul2);font-weight:bold}
+.map{position:relative;background:#f8fbfe;border:2px solid #d5e5f2;border-radius:20px;padding:30px;overflow:hidden}
+.center{max-width:390px;margin:0 auto 30px;text-align:center;background:var(--azul);color:white;padding:24px;border-radius:18px;font-size:1.3rem;font-weight:bold;box-shadow:0 8px 20px #17365d30}
+.branches{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.branch{background:white;border:2px solid #b9d1e4;border-radius:14px;padding:18px}
+.branch h4{margin:0 0 8px;color:var(--azul2)}
+.branch ul{padding-left:20px;margin-bottom:0}
+@media(max-width:800px){.branches{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.branches{grid-template-columns:1fr}.step{display:block}.num{margin-bottom:10px}}
+.timeline{border-left:4px solid var(--azul2);margin:25px 10px;padding-left:25px}
+.timeline div{margin:20px 0}
+.timeline b{color:var(--azul)}
+.quote{font-size:1.15rem;font-weight:bold;text-align:center;padding:25px;background:#f4f8fc;border-radius:15px;color:var(--azul)}
+footer{background:#102a43;color:white;text-align:center;padding:35px 20px}
+.signature{margin-top:12px;opacity:.85;font-size:.92rem}
+.small{font-size:.9rem;color:#64748b}
+.btn{display:inline-block;background:var(--azul);color:white;padding:12px 18px;border-radius:9px;text-decoration:none;font-weight:bold;margin-top:10px}
+.btn:hover{background:var(--azul2)}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="badge">Actividad académica · Derecho Laboral</span>
+  <h1>Jurisdicción Laboral, Competencia y Reclamación Administrativa</h1>
+  <div class="author">By: <strong>Julian Buenhombre</strong> · Estudiante de Derecho</div>
+  <p>Guía práctica para identificar la autoridad competente y actuar correctamente ante una controversia laboral en Colombia.</p>
+</header>
+
+<nav>
+  <a href="#introduccion">Introducción</a>
+  <a href="#jurisdiccion">Jurisdicción</a>
+  <a href="#competencia">Competencia</a>
+  <a href="#reclamacion">Reclamación</a>
+  <a href="#caso">Caso</a>
+  <a href="#mapa">Mapa conceptual</a>
+  <a href="#ruta">Ruta práctica</a>
+  <a href="#fuentes">Fuentes</a>
+</nav>
+
+<main>
+
+<section id="introduccion">
+<h2>1. Introducción</h2>
+<p class="intro">
+Cuando surge una controversia laboral, no basta con saber que existe un derecho posiblemente vulnerado.
+Es necesario identificar <strong>qué autoridad puede conocer el conflicto, dónde debe presentarse la demanda,
+qué factores determinan la competencia y si antes de acudir al juez debe cumplirse un requisito previo</strong>.
+</p>
+<p>
+En los conflictos contra determinadas entidades públicas, el artículo 6 del Código Procesal del Trabajo
+y de la Seguridad Social establece la necesidad de agotar la <strong>reclamación administrativa</strong>
+antes de iniciar la acción correspondiente.
+</p>
+<div class="alert">
+<strong>Idea central:</strong> una actuación correcta desde el inicio puede evitar problemas de competencia,
+retrasos procesales y dificultades para obtener una decisión judicial sobre las pretensiones planteadas.
+</div>
+</section>
+
+<section id="jurisdiccion">
+<h2>2. ¿Qué es la jurisdicción laboral?</h2>
+<p>
+La jurisdicción laboral hace parte de la jurisdicción ordinaria y tiene como finalidad resolver los
+conflictos jurídicos relacionados con el trabajo y la seguridad social que corresponden a los jueces laborales.
+</p>
+<div class="grid">
+<div class="card"><strong>Conflictos laborales</strong><br>Permite resolver controversias derivadas de relaciones de trabajo.</div>
+<div class="card"><strong>Seguridad social</strong><br>Conoce de asuntos que la ley asigna a la jurisdicción laboral y de seguridad social.</div>
+<div class="card"><strong>Protección de derechos</strong><br>Busca garantizar que los derechos laborales puedan ser reclamados judicialmente.</div>
+<div class="card"><strong>Debido proceso</strong><br>La controversia debe ser conocida por la autoridad judicial competente.</div>
+</div>
+</section>
+
+<section id="competencia">
+<h2>3. Factores determinantes de la competencia</h2>
+<p>La competencia permite establecer <strong>qué juez o autoridad concreta</strong> debe conocer de un asunto.</p>
+<div class="grid">
+<div class="card"><h3>Factor objetivo</h3><p>Se relaciona con la naturaleza del asunto, las pretensiones y los criterios que la ley utiliza para asignar el conocimiento del proceso.</p></div>
+<div class="card"><h3>Factor subjetivo</h3><p>Tiene en cuenta las personas o sujetos que intervienen en el conflicto y las condiciones jurídicas que puedan determinar la autoridad competente.</p></div>
+<div class="card"><h3>Factor territorial</h3><p>Permite determinar el lugar donde debe tramitarse el proceso, de acuerdo con las reglas legales de competencia territorial.</p></div>
+<div class="card"><h3>Factor funcional</h3><p>Determina la autoridad que conoce según la instancia y la función judicial que corresponda.</p></div>
+</div>
+
+<h3>Autoridades judiciales laborales</h3>
+<div class="grid">
+<div class="card"><strong>Juzgados Laborales</strong><p>Conocen procesos laborales en primera instancia cuando la ley les atribuye competencia.</p></div>
+<div class="card"><strong>Tribunales Superiores – Salas Laborales</strong><p>Conocen determinados asuntos y recursos, especialmente en segunda instancia, según las reglas legales.</p></div>
+<div class="card"><strong>Corte Suprema de Justicia – Sala de Casación Laboral</strong><p>Es el máximo órgano de la jurisdicción ordinaria laboral y conoce, entre otros asuntos, del recurso extraordinario de casación.</p></div>
+</div>
+</section>
+
+<section id="reclamacion">
+<h2>4. Reclamación administrativa</h2>
+<p>
+El artículo 6 del Código Procesal del Trabajo y de la Seguridad Social, modificado por la Ley 712 de 2001,
+dispone que las acciones contenciosas contra la Nación, entidades territoriales y otras entidades públicas
+sólo pueden iniciarse después de agotada la reclamación administrativa en los casos previstos por la norma.
+</p>
+
+<div class="quote">
+“La reclamación administrativa funciona como un factor de precompetencia: permite que el juez laboral
+adquiera competencia para conocer de la controversia cuando la ley exige su agotamiento.”
+</div>
+
+<h3>¿Cómo se presenta?</h3>
+<div class="grid">
+<div class="card"><strong>1. Identificar la entidad</strong><br>Determinar cuál es la entidad pública a la que se dirige el reclamo.</div>
+<div class="card"><strong>2. Explicar los hechos</strong><br>Relatar de forma clara los hechos que originan la reclamación.</div>
+<div class="card"><strong>3. Formular las pretensiones</strong><br>Indicar exactamente qué derecho o reconocimiento se solicita.</div>
+<div class="card"><strong>4. Adjuntar soportes</strong><br>Incluir documentos que permitan respaldar los hechos y el derecho reclamado.</div>
+</div>
+
+<div class="danger">
+<strong>¡Punto clave!</strong> La reclamación debe guardar correspondencia con las pretensiones que posteriormente
+se quieran llevar al juez. No es recomendable reclamar una cosa ante la entidad y después pretender judicialmente
+algo completamente distinto sin haberlo sometido previamente a la entidad cuando la reclamación sea exigible.
+</div>
+
+<h3>¿Qué puede ocurrir después?</h3>
+<div class="grid">
+<div class="card"><h3>🟢 Respuesta positiva</h3><p>La entidad reconoce lo solicitado. Si el derecho queda satisfecho, puede no ser necesario acudir al juez por esa pretensión.</p></div>
+<div class="card"><h3>🟡 Respuesta parcial</h3><p>La entidad reconoce solamente una parte. Puede existir controversia sobre lo que quedó pendiente.</p></div>
+<div class="card"><h3>🔴 Respuesta negativa</h3><p>La entidad niega la solicitud. Si se cumplen los demás requisitos, puede acudirse a la jurisdicción correspondiente.</p></div>
+<div class="card"><h3>⚪ Sin respuesta</h3><p>Transcurrido un mes puede operar el silencio administrativo negativo en los términos de la norma, sin perjuicio de la opción del interesado de esperar la respuesta.</p></div>
+</div>
+
+<h3>¿Para qué sirve?</h3>
+<ul>
+<li>Permite que la entidad conozca directamente la pretensión.</li>
+<li>Puede permitir que la entidad corrija la situación sin necesidad de un proceso judicial.</li>
+<li>Constituye un requisito previo en los casos en que la ley lo exige.</li>
+<li>Se relaciona con la competencia del juez laboral.</li>
+<li>Permite precisar desde el comienzo cuál es el derecho que se pretende hacer valer.</li>
+</ul>
+</section>
+
+<section id="diferencia">
+<h2>5. Reclamación administrativa vs. vía administrativa</h2>
+<table>
+<tr><th>Reclamación administrativa</th><th>Vía administrativa</th></tr>
+<tr><td>Es el reclamo que formula el interesado ante una entidad pública para solicitar el reconocimiento de un derecho.</td><td>Es el conjunto de actuaciones y reglas mediante las cuales la administración conoce, tramita y decide una actuación administrativa.</td></tr>
+<tr><td>En materia laboral puede ser requisito previo para acudir ante el juez, cuando la ley lo exige.</td><td>Puede incluir recursos y otras etapas propias del procedimiento administrativo.</td></tr>
+<tr><td>Busca que la entidad reconozca o atienda una pretensión concreta.</td><td>Se refiere al desarrollo formal de la actuación administrativa.</td></tr>
+<tr><td>En el contexto estudiado, el término relevante para el silencio es de un mes.</td><td>Sus términos y etapas dependen del procedimiento administrativo aplicable.</td></tr>
+</table>
+<div class="alert"><strong>Recuerda:</strong> reclamación administrativa y vía administrativa están relacionadas, pero no son conceptos equivalentes.</div>
+</section>
+
+<section id="caso">
+<h2>6. Caso jurisprudencial: Sentencia SL8603-2015</h2>
+<div class="case">
+<h3>Corte Suprema de Justicia – Sala de Casación Laboral</h3>
+<p>
+El caso permite estudiar la importancia de la reclamación administrativa como factor de competencia.
+La controversia se relacionó con una prestación pensional que fue llevada al proceso judicial sin que
+existiera correspondencia suficiente con la reclamación administrativa realizada previamente.
+</p>
+<div class="timeline">
+<div><b>1. Reclamación:</b> la interesada formuló ante la entidad una solicitud relacionada con una pensión de vejez.</div>
+<div><b>2. Proceso judicial:</b> posteriormente, dentro de la controversia judicial, apareció una pretensión relacionada con una pensión de invalidez.</div>
+<div><b>3. Problema:</b> la prestación posteriormente discutida no había sido objeto de la reclamación administrativa en los mismos términos.</div>
+<div><b>4. Decisión:</b> la Corte destacó que la reclamación administrativa constituye un factor de competencia y que existe una relación entre lo reclamado administrativamente y lo que puede ser llevado al proceso judicial.</div>
+</div>
+</div>
+
+<h3>¿Qué aprendemos del caso?</h3>
+<div class="grid">
+<div class="card"><strong>Precisión</strong><p>La reclamación debe identificar claramente el derecho que se pretende.</p></div>
+<div class="card"><strong>Coherencia</strong><p>Las pretensiones administrativas y judiciales deben guardar correspondencia cuando la reclamación es exigible.</p></div>
+<div class="card"><strong>Prueba</strong><p>Es fundamental conservar el escrito, radicado y respuesta de la entidad.</p></div>
+<div class="card"><strong>Competencia</strong><p>La reclamación no es un simple trámite: puede incidir en la competencia del juez.</p></div>
+</div>
+</section>
+
+<section id="mapa">
+<h2>7. Mapa conceptual</h2>
+<p>El siguiente mapa resume los conceptos principales de la actividad:</p>
+<div class="map">
+<div class="center">⚖️ CONTROVERSIA LABORAL<br><small>Identificar el derecho y la autoridad competente</small></div>
+<div class="branches">
+<div class="branch">
+<h4>JURISDICCIÓN</h4>
+<ul>
+<li>Jurisdicción ordinaria</li>
+<li>Área laboral y seguridad social</li>
+<li>Resolución de conflictos</li>
+</ul>
+</div>
+<div class="branch">
+<h4>COMPETENCIA</h4>
+<ul>
+<li>Objetivo</li>
+<li>Subjetivo</li>
+<li>Territorial</li>
+<li>Funcional</li>
+</ul>
+</div>
+<div class="branch">
+<h4>AUTORIDADES</h4>
+<ul>
+<li>Juzgados laborales</li>
+<li>Tribunales Superiores</li>
+<li>Corte Suprema – Sala Laboral</li>
+</ul>
+</div>
+<div class="branch">
+<h4>RECLAMACIÓN</h4>
+<ul>
+<li>Entidad pública</li>
+<li>Escrito de reclamación</li>
+<li>Respuesta o silencio</li>
+<li>Requisito cuando la ley lo exige</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="flow">
+<div class="box">Controversia</div><span class="arrow">→</span>
+<div class="box">Identificar competencia</div><span class="arrow">→</span>
+<div class="box">¿Reclamación?</div><span class="arrow">→</span>
+<div class="box">Demanda</div><span class="arrow">→</span>
+<div class="box">Juez competente</div>
+</div>
+</section>
+
+<section id="ruta">
+<h2>8. Ruta práctica: ¿qué debe hacer una persona?</h2>
+
+<div class="step"><div class="num">1</div><div><h3>Identificar el conflicto</h3><p>Determinar qué derecho laboral o de seguridad social considera vulnerado y cuáles son los hechos que originan el problema.</p></div></div>
+<div class="step"><div class="num">2</div><div><h3>Identificar a las partes</h3><p>Establecer quién es el trabajador, empleador, entidad pública o entidad de seguridad social involucrada.</p></div></div>
+<div class="step"><div class="num">3</div><div><h3>Determinar si se exige reclamación administrativa</h3><p>Si el caso se encuentra dentro de los supuestos legales, presentar la reclamación ante la entidad correspondiente antes de iniciar la acción judicial.</p></div></div>
+<div class="step"><div class="num">4</div><div><h3>Guardar la evidencia</h3><p>Conservar copia de la reclamación, número de radicado, anexos, respuesta y constancias de notificación.</p></div></div>
+<div class="step"><div class="num">5</div><div><h3>Revisar la respuesta</h3><p>Determinar si fue positiva, parcial, negativa o si transcurrió el término correspondiente sin respuesta.</p></div></div>
+<div class="step"><div class="num">6</div><div><h3>Determinar la competencia</h3><p>Analizar materia, sujetos, territorio, función y los demás criterios legales aplicables.</p></div></div>
+<div class="step"><div class="num">7</div><div><h3>Preparar la demanda</h3><p>Formular hechos, pretensiones, fundamentos y pruebas de manera coherente con la reclamación administrativa cuando esta sea exigible.</p></div></div>
+<div class="step"><div class="num">8</div><div><h3>Acudir a la autoridad competente</h3><p>Presentar la demanda ante el juez o autoridad que corresponda según las reglas de competencia.</p></div></div>
+
+<div class="success">
+<strong>Resultado esperado:</strong> una correcta identificación de la jurisdicción, la competencia y los requisitos previos permite encaminar adecuadamente la solución de la controversia laboral.
+</div>
+</section>
+
+<section>
+<h2>9. Conclusión</h2>
+<p>
+La competencia judicial laboral es fundamental para garantizar que una controversia sea conocida por la autoridad
+correspondiente. Los factores objetivo, subjetivo, territorial y funcional permiten orientar la elección del juez,
+mientras que la reclamación administrativa adquiere especial importancia cuando el conflicto involucra una entidad
+pública y la ley exige su agotamiento previo.
+</p>
+<p>
+El análisis de la Sentencia SL8603-2015 demuestra que la reclamación administrativa no debe entenderse como una
+simple formalidad. Es necesario formularla de manera clara y coherente con las pretensiones que posteriormente
+puedan presentarse ante el juez. De esta manera se favorece el acceso efectivo a la justicia y se reducen los
+riesgos procesales derivados de una incorrecta preparación del caso.
+</p>
+</section>
+
+<section id="fuentes">
+<h2>10. Fuentes y referencias</h2>
+<ul>
+<li>Constitución Política de Colombia.</li>
+<li>Código Procesal del Trabajo y de la Seguridad Social, artículo 6.</li>
+<li>Ley 712 de 2001, artículo 4.</li>
+<li>Corte Suprema de Justicia, Sala de Casación Laboral, Sentencia SL8603-2015.</li>
+<li>Corte Constitucional, Sentencia C-792 de 2006.</li>
+<li>Material académico de la Fundación Universitaria San Mateo sobre jurisdicción laboral, competencia y reclamación administrativa.</li>
+</ul>
+<p class="small">Página elaborada con fines académicos. La información debe contrastarse con el texto vigente de las normas y la jurisprudencia aplicable al caso concreto.</p>
+</section>
+
+</main>
+
+<footer>
+<strong>Jurisdicción Laboral y Reclamación Administrativa</strong>
+<p>Actividad académica · Derecho Laboral</p>
+<p class="signature">Trabajo elaborado por <strong>Julian Buenhombre</strong> · Estudiante de Derecho</p>
+</footer>
+
+</body>
+</html>
